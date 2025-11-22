@@ -1,0 +1,46 @@
+<!-- Filename: navbar.html -->
+<!-- Location: /project_root/templates/navbar.html -->
+<!-- Description: Reusable navigation bar component included in other templates -->
+
+<!-- Navigation bar -->
+<!-- This is a partial template that gets included in other pages -->
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- Brand/Logo - Always visible -->
+        <a href="{{ url_for('landing') }}" class="brand">
+            Flask Secure App
+        </a>
+        
+        <!-- Navigation links container -->
+        <div class="nav-links">
+            <!-- Conditional rendering based on login status -->
+            <!-- Jinja2 if statement checks if 'user' exists in session -->
+            
+            {% if 'user' in session %}
+                <!-- Links shown when user IS logged in -->
+                
+                <!-- Dashboard link -->
+                <a href="{{ url_for('index') }}" class="nav-link">Dashboard</a>
+                
+                <!-- About page link -->
+                <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                
+                <!-- Logout link (highlighted differently) -->
+                <a href="{{ url_for('logout') }}" class="nav-link logout-link">Logout</a>
+                
+            {% else %}
+                <!-- Links shown when user is NOT logged in -->
+                
+                <!-- About page (always accessible) -->
+                <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                
+                <!-- Login link -->
+                <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                
+                <!-- Register link -->
+                <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+                
+            {% endif %}
+        </div>
+    </div>
+</nav>

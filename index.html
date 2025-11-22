@@ -1,0 +1,59 @@
+<!-- Filename: index.html -->
+<!-- Location: /project_root/templates/index.html -->
+<!-- Description: Dashboard page shown to logged-in users -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper rendering -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Dashboard - Flask Secure App</title>
+    
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Include navigation bar -->
+    {% include 'navbar.html' %}
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Personalized welcome message -->
+        <!-- {{ user }} is passed from Flask and displays the logged-in username -->
+        <h1>Welcome, {{ user }}!</h1>
+        
+        <!-- Dashboard content -->
+        <div class="dashboard-content">
+            <h2>Your Dashboard</h2>
+            <p>You have successfully logged into your account.</p>
+            
+            <!-- Dashboard sections -->
+            <div class="dashboard-sections">
+                <!-- Section 1: Quick Actions -->
+                <div class="dashboard-section">
+                    <h3>Quick Actions</h3>
+                    <ul>
+                        <li>View your profile</li>
+                        <li>Update settings</li>
+                        <li>Check messages</li>
+                    </ul>
+                </div>
+                
+                <!-- Section 2: Recent Activity -->
+                <div class="dashboard-section">
+                    <h3>Recent Activity</h3>
+                    <p>No recent activity to display.</p>
+                </div>
+            </div>
+            
+            <!-- Helpful information -->
+            <div class="info-box">
+                <p><strong>Security Tip:</strong> Always remember to log out when you're done!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

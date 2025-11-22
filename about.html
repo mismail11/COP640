@@ -1,0 +1,86 @@
+<!-- Filename: about.html -->
+<!-- Location: /project_root/templates/about.html -->
+<!-- Description: About page with information about the application -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper rendering -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>About - Flask Secure App</title>
+    
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Include navigation bar -->
+    {% include 'navbar.html' %}
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Page heading -->
+        <h1>About Our Flask Application</h1>
+        
+        <!-- About content -->
+        <div class="about-content">
+            <!-- Introduction section -->
+            <section>
+                <h2>Welcome to Our Secure Flask Demo</h2>
+                <p>This is a demonstration application built with Flask, a lightweight Python web framework.</p>
+                <p>The application showcases basic but essential web development concepts including:</p>
+            </section>
+            
+            <!-- Features section -->
+            <section>
+                <h2>Key Features</h2>
+                <ul class="feature-list">
+                    <li><strong>User Authentication:</strong> Secure login and registration system</li>
+                    <li><strong>Password Security:</strong> Passwords are hashed using bcrypt</li>
+                    <li><strong>Session Management:</strong> User sessions to maintain login state</li>
+                    <li><strong>Template System:</strong> Jinja2 templates for dynamic HTML</li>
+                    <li><strong>Route Protection:</strong> Certain pages require authentication</li>
+                </ul>
+            </section>
+            
+            <!-- Technology section -->
+            <section>
+                <h2>Technologies Used</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h3>Python</h3>
+                        <p>Backend programming language</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Flask</h3>
+                        <p>Web framework</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Bcrypt</h3>
+                        <p>Password hashing</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Jinja2</h3>
+                        <p>Template engine</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Security note -->
+            <section class="security-note">
+                <h2>Security Note</h2>
+                <p>This is a learning application. In production, you would also implement:</p>
+                <ul>
+                    <li>HTTPS/SSL encryption</li>
+                    <li>Database storage instead of in-memory storage</li>
+                    <li>CSRF protection</li>
+                    <li>Rate limiting</li>
+                    <li>Input validation and sanitization</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

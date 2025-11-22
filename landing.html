@@ -1,0 +1,38 @@
+<!-- Filename: landing.html -->
+<!-- Location: /project_root/templates/landing.html -->
+<!-- Description: Welcome page for non-logged-in users -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper rendering and responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title shown in browser tab -->
+    <title>Welcome - Flask Secure App</title>
+    
+    <!-- Link to external CSS stylesheet -->
+    <!-- url_for() is a Flask function that generates the correct URL for static files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Main container for page content -->
+    <div class="container">
+        <!-- Main heading -->
+        <h1>Welcome to our Flask Application!</h1>
+        
+        <!-- Description paragraph -->
+        <p>Please log in or register to access the application.</p>
+        
+        <!-- Container for action buttons -->
+        <div class="buttons">
+            <!-- Login button - url_for('login') generates the URL for the login route -->
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            
+            <!-- Register button - url_for('register') generates the URL for the register route -->
+            <a href="{{ url_for('register') }}" class="btn">Register</a>
+        </div>
+    </div>
+</body>
+</html>

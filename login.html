@@ -1,0 +1,65 @@
+<!-- Filename: login.html -->
+<!-- Location: /project_root/templates/login.html -->
+<!-- Description: Login page with form for user authentication -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for proper rendering -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Login - Flask Secure App</title>
+    
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Include the navigation bar from separate file -->
+    <!-- This keeps our code DRY (Don't Repeat Yourself) -->
+    {% include 'navbar.html' %}
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Page heading -->
+        <h1>Login</h1>
+        
+        <!-- Error message display -->
+        <!-- Only shows if 'error' variable is passed from Flask -->
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        
+        <!-- Login form -->
+        <!-- method="POST" sends data securely in request body -->
+        <!-- action points to the login route -->
+        <form method="POST" action="{{ url_for('login') }}" class="form">
+            <!-- Username field -->
+            <label for="username">Username:</label>
+            <input type="text" 
+                   id="username" 
+                   name="username" 
+                   required
+                   placeholder="Enter your username">
+            
+            <!-- Password field -->
+            <label for="password">Password:</label>
+            <input type="password" 
+                   id="password" 
+                   name="password" 
+                   required
+                   placeholder="Enter your password">
+            
+            <!-- Submit button -->
+            <button type="submit" class="btn">Login</button>
+        </form>
+        
+        <!-- Link to registration page for new users -->
+        <p class="register-link">
+            Don't have an account? 
+            <a href="{{ url_for('register') }}">Register here</a>
+        </p>
+    </div>
+</body>
+</html>
