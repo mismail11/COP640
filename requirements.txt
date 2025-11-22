@@ -1,0 +1,32 @@
+# Filename: requirements.txt
+# Location: /project_root/requirements.txt
+# Description: List of Python packages required for this Flask application
+# Install with: pip install -r requirements.txt
+
+# Flask web framework
+# Flask is the core framework for building web applications in Python
+Flask==2.3.3
+
+# Bcrypt for password hashing
+# Provides secure password hashing using the bcrypt algorithm
+bcrypt==4.0.1
+
+# Werkzeug (Flask dependency)
+# WSGI web application library used by Flask
+Werkzeug==2.3.7
+
+# Jinja2 (Flask dependency)
+# Template engine for rendering HTML templates
+Jinja2==3.1.2
+
+# MarkupSafe (Jinja2 dependency)
+# Safely handles HTML/XML markup
+MarkupSafe==2.1.3
+
+# Click (Flask dependency)
+# Command line interface creation kit
+click==8.1.7
+
+# ItsDangerous (Flask dependency)
+# Provides secure data serialization for sessions
+itsdangerous==2.1.2
